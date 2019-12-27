@@ -9,7 +9,7 @@ from math import floor
 # Reads data from the provided input file. 
 # Returns a list of ints (does no validation). 
 def getData():
-    with open("input.txt") as file:
+    with open("/files/day_1/input.txt") as file:
         return [int(line) for line in file]
 
 # Simple mass calculation. 
