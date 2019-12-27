@@ -1,2 +1,8 @@
-- name: lint
-  uses: bulv1ne/python-style-check@v0.3
+name: PyLint
+on: push
+jobs:
+  lint:
+    name: Lint
+    steps:
+      - uses: bulv1ne/python-style-check@v0.3
+     
