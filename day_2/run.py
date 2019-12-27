@@ -36,14 +36,16 @@ def parse(data, noun, verb):
     for i in range(0, len(commands), 4):
         # Assign indexes. 
         opCode = commands[i]
+
+        # Check for exit condition. 
+        if opCode == OP_END: 
+            return commands
+            
         resultIndex = commands[i+3]
 
         # Get values. 
         operandOne, operandTwo = commands[commands[i+1]], commands[commands[i+2]]
 
-        # Check for exit condition. 
-        if opCode == OP_END: 
-            return commands
 
         # Perform the operation
         commands[resultIndex] = operation(opCode, operandOne, operandTwo)
