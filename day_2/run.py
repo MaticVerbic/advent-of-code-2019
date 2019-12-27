@@ -34,7 +34,7 @@ def parse(data, noun, verb):
     commands[2] = verb
 
     for i in range(0, len(commands), 4):
-        # Assign indexes. 
+        # Get opcode. 
         opCode = commands[i]
 
         # Check for exit condition. 
