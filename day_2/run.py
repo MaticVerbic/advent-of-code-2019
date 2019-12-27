@@ -1,3 +1,9 @@
+'''
+@author: Matic Verbic
+
+Solution for https://adventofcode.com/2019/day/2
+'''
+
 import traceback
 from itertools import product
 
