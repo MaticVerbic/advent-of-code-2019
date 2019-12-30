@@ -62,11 +62,11 @@ def parse(data, noun, verb):
 if __name__ == "__main__":
     try:
         data = getData() 
-        print("(task1): Result in index one: ", parse(data, 12, 2)[0])
+        print("(task1): Result in index one: \"{}\". ".format(parse(data, 12, 2)[0]))
         data = getData()
         for noun, verb in product(range(0, 100), range(0, 100)):
             if parse(data, noun, verb)[0] == 19690720:
-                print("(task2): Noun: %d, Verb: %d, Result: %d" % (noun, verb, 100 * noun + verb))
+                print("(task2): Noun:\"{}\", Verb: \"{}\", Result: \"{}\". ".format(noun, verb, 100 * noun + verb))
                 break
     except Exception as e:
         traceback.print_exc()

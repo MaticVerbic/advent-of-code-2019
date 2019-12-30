@@ -41,8 +41,8 @@ distance = lambda x, y: abs(x)+abs(y)
 
 if __name__ == "__main__":
     # Find min distance between all intersects. 
-    print("(task1): Minimal distance is %d. " % (min([distance(x, y) for (x, y) in intersections])))
+    print("(task1): Minimal distance is \"{}\". " .format(min([distance(x, y) for (x, y) in intersections])))
 
     # Find number of intersects for each intersect and return min. 
     result = 2 + min(sum([line.index(intersect) for line in data]) for intersect in intersections)
-    print("(task2): Minimal jumps are %d. " % (result)) 
+    print("(task2): Minimal jumps are \"{}\". " .format(result)) 
