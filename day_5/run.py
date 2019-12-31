@@ -69,7 +69,7 @@ def handler_opcode(opcode):
     # If invalid values are found throw an exception. 
     if -1 in modes: 
         raise Exception(ERR_MODES.format(1 + modes.index(-1)))
-        
+
     # Return [opcode, mode param 1, mode param 2, mode param 3]. 
     return [sum(op)] + modes + [0 for _ in range(4 - (1 + len(modes)))]
     
@@ -128,6 +128,7 @@ def init_logger():
     logger.setLevel(logging.INFO)
     logger.addHandler(syslog)
 
+    logger.disabled = True # To enable the logger comment this line. 
     return logging.LoggerAdapter(logger, {})
 
 # Helper method for logging. 
@@ -160,9 +161,8 @@ def opLog(mode, op, opCode, operandOne=None, operandTwo=None, resultIndex=None):
 
 if __name__ == "__main__":
     try:
-        # Init and enable the logger. 
+        # Init the logger. 
         logger = init_logger()
-        logger.disabled = True
         
         # Task one. 
         data = getData() 
