@@ -1,9 +1,22 @@
-name: PyLint
-on: push
+name: Python tests
+
+on: [push]
+
 jobs:
-  lint:
-    name: Lint
+  build:
+
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
     steps:
-      - uses: bulv1ne/python-style-check@v0.3
-     
+    - uses: actions/checkout@v1
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Test with pytest
+      run: |
+        pip install pytest
+        pytest
