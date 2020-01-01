@@ -13,3 +13,5 @@ day-four:
 	$(container) python3 /files/day_4/run.py
 day-five:
 	$(container) python3 /files/day_5/run.py
+day-six:
+	$(container) python3 /files/day_6/run.py
